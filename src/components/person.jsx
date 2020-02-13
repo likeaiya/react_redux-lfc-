@@ -1,17 +1,33 @@
+//UI组件           需要为塔匹配一个容器组件
+
+
+
+
 import React, { Component } from 'react'
 
+
+
 export default class Person extends Component {
+    add =()=>{
+        //1.获取用户的输入
+        const name = this.refs.name.value
+        const age = this.refs.age.value
+        //2.操作状态
+        this.props.addPerson({name,age})
+    }
     render() {
         return (
             <div>
-                <h2>当前总人数为:xxxx</h2>
-                <input type="text" placeholder='输入名字'/>
-                <input type="text" placeholder='输入年龄'/>
-                <button>添加</button>
+                <h2>当前总人数为:{this.props.persons.length},上方组件中计数的结果为:{this.props.number}</h2>
+                <input ref="name" type="text" placeholder='输入名字'/>&nbsp;
+                <input ref="age" type="text" placeholder='输入年龄'/>&nbsp;
+                <button onClick={this.add}>添加</button>
                 <ul>
-                    <li>姓名:xxx, 年龄:yyy</li>
-                    <li>姓名:xxx, 年龄:yyy</li>
-                    <li>姓名:xxx, 年龄:yyy</li>
+                    {
+                        this.props.persons.map((personObj,index)=>{
+                        return <li key={index}>姓名:{personObj.name},年龄:{personObj.age}</li>
+                        })
+                    }
                 </ul>
             </div>
         )

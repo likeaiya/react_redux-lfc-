@@ -57,7 +57,7 @@ export default class Count extends Component {
         //      this.props.increment(value*1)
         //  },1000)
 
-        this.props.incrementAsync(value*1,4000)
+        this.props.incrementAsync(value*1,1000)
        
     }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import store from '../redux/store'
 // import {INCREMENT,DECREMENT} from '../redux/action-types'
-import {createIncrementAction,createDecrementAction} from '../redux/count-action-creator'
+// import {createIncrementAction,createDecrementAction} from '../redux/count-action-creator'
 
 
 export default class Count extends Component {
@@ -57,7 +57,7 @@ export default class Count extends Component {
         //      this.props.increment(value*1)
         //  },1000)
 
-        this.props.incrementAsync(value*1,4000)
+        this.props.incrementAsync(value*1,1000)
        
     }
 

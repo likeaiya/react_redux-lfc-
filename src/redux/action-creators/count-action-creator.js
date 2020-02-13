@@ -3,7 +3,7 @@
 //本文件专门用于创建action对象
 
 
-import {INCREMENT,DECREMENT} from './action-types'
+import {INCREMENT,DECREMENT} from '../action-types'
 
 
 export const createIncrementAction = (value) => ({type:INCREMENT,data:value})
